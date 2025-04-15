@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prediction Results</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Optional: Add a subtle glow effect to the card */
+    .card-glow {
+      box-shadow: 0 0 30px rgba(79, 70, 229, 0.2); /* Indigo-ish glow */
+    }
+     /* Custom gradient for more visual interest if desired */
+    .bg-custom-gradient {
+       background-image: linear-gradient(to right, #040A25, #0f172a, #040A25); /* Example gradient */
+    }
+  </style>
+</head>
+
+<body class="bg-[#040A25] text-white min-h-screen flex flex-col items-center justify-center p-4">
+
+  <!-- Optional: Blurred Gradient Shape (Kept from original) -->
+  <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+    <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem]
+                -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#f00f31] to-[#9089fc]
+                opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+      style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%,
+                                 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%,
+                                 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%,
+                                 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+    </div>
+  </div>
+
+  <!-- Main Content Card -->
+  <div class="relative w-full max-w-4xl bg-slate-900/80 backdrop-blur-sm rounded-xl shadow-2xl overflow-hidden card-glow border border-slate-700">
+    <div class="p-6 md:p-10">
+
+      <!-- Header Title -->
+      <div class="text-center mb-8">
+        <h1 class="text-3xl font-bold tracking-tight text-white sm:text-5xl">Prediction Results 🏏</h1>
+        <p class="mt-2 text-lg text-slate-400">Live Win Probability Estimate</p>
+      </div>
+
+      <!-- Probability Sections (Grid Layout) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8">
+
+        <!-- Batting Team Section -->
+        <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-600 text-center transition hover:bg-slate-700/50">
+          <h2 class="text-lg font-semibold text-blue-300 mb-1">Batting Team</h2>
+          <p class="text-2xl font-bold text-white mb-3">{{ batting_team }}</p>
+          <div class="w-full bg-slate-700 rounded-full h-2.5 mb-2 dark:bg-gray-700">
+            <div class="bg-blue-500 h-2.5 rounded-full" style="width: {{ win_probability }}%"></div>
+          </div>
+          <p class="text-3xl font-bold text-blue-400">{{ win_probability }}%</p>
+          <p class="text-sm text-slate-400">Win Probability</p>
+        </div>
+
+        <!-- Bowling Team Section -->
+        <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-600 text-center transition hover:bg-slate-700/50">
+          <h2 class="text-lg font-semibold text-red-300 mb-1">Bowling Team</h2>
+          <p class="text-2xl font-bold text-white mb-3">{{ bowling_team }}</p>
+          <div class="w-full bg-slate-700 rounded-full h-2.5 mb-2 dark:bg-gray-700">
+            <div class="bg-red-500 h-2.5 rounded-full" style="width: {{ loss_probability }}%"></div>
+          </div>
+          <p class="text-3xl font-bold text-red-400">{{ loss_probability }}%</p>
+           <p class="text-sm text-slate-400">Win Probability</p>
+        </div>
+
+      </div>
+
+       <!-- Visualization Image -->
+       <div class="mt-8">
+           <h3 class="text-center text-xl font-semibold text-slate-300 mb-4">Prediction Trend</h3>
+           <img src="{{ url_for('static', filename='ipl.jpg') }}"
+                alt="Prediction Visual"
+                width="2432" height="1442" 
+                class="rounded-lg bg-white/5 w-full h-auto shadow-lg ring-1 ring-white/10">
+        </div>
+
+    </div>
+  </div>
+
+  <!-- Optional Footer/Link -->
+  <footer class="mt-8 text-center text-slate-500 text-sm">
+      Powered by Your IPL-Prediction-Model
+  </footer>
+
+</body>
+
+</html>
