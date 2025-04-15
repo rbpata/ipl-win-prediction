@@ -1,4 +1,4 @@
-# 🏏 IPL Score Predictor — 2024
+# 🏏 IPL Score Predictor — 2025
 
 A **Flask-based web application** that predicts the winning probability of a team in an IPL match using a machine learning model trained on historical IPL data!
 
