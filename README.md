@@ -78,7 +78,7 @@ And enjoy predicting IPL match outcomes!
 
 | Prediction Form | Prediction Results |
 |-----------------|---------------------|
-| ![Form Screenshot](https://raw.githubusercontent.com/rbpata/ipl-win-prediction/main/static/1.png) | ![Results Screenshot](https://raw.githubusercontent.com/rbpata/ipl-win-prediction/main/static/2.png) |
+| ![Form Screenshot](https://raw.githubusercontent.com/rbpata/ipl-win-prediction/static/1.png) | ![Results Screenshot](https://raw.githubusercontent.com/rbpata/ipl-win-prediction/static/2.png) |
 
 ---
 
