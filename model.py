@@ -8,14 +8,14 @@ from sklearn.metrics import accuracy_score
 from sklearn.ensemble import RandomForestClassifier
 import pickle
 
-df = pd.read_csv('dataset.csv')
+df = pd.read_csv('datasets/dataset.csv')
 
 x = df.iloc[:, :-1]
 y = df.iloc[:,-1]
 x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.25,random_state=100)
 
 trf = ColumnTransformer([
-    ('trf',OneHotEncoder(sparse=False,drop='first'),['batting_team','bowling_team','city'])
+    ('trf',OneHotEncoder(sparse_output=False,drop='first'),['batting_team','bowling_team','city'])
 ],
 remainder='passthrough')
 
