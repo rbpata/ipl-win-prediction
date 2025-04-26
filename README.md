@@ -2,6 +2,8 @@
 
 A **Flask-based web application** that predicts the winning probability of a team in an IPL match using a machine learning model trained on historical IPL data!
 
+🌐 **Live Demo:** [ipl-win-prediction-ocgz.onrender.com](https://ipl-win-prediction-ocgz.onrender.com/)
+
 ---
 
 ## 🚀 Features
@@ -18,7 +20,7 @@ A **Flask-based web application** that predicts the winning probability of a tea
 
 ---
 
-## 💻 Getting Started
+## 💻 Getting Started (Local Setup)
 
 ### 1️⃣ Clone the Repository
 
@@ -41,7 +43,7 @@ pip install -r requirements.txt
 pip install flask
 ```
 
-### 3️⃣ Run the App
+### 3️⃣ Run the App Locally
 
 ```bash
 python app.py
@@ -55,13 +57,14 @@ Navigate to:
 http://localhost:5000
 ```
 
-And enjoy predicting IPL match outcomes!
+Or check it **live online**:  
+👉 [https://ipl-win-prediction-ocgz.onrender.com/](https://ipl-win-prediction-ocgz.onrender.com/)
 
 ---
 
 ## 🧠 Usage
 
-1. Select the **Batting Team**, **Bowling Team**, **Venue** from the dropdowns.
+1. Select the **Batting Team**, **Bowling Team**, and **Venue** from the dropdowns.
 2. Enter:
    - 🎯 **Target Score**
    - 🏏 **Current Score**
@@ -86,6 +89,3 @@ And enjoy predicting IPL match outcomes!
 
 Contributions, suggestions, and pull requests are welcome!  
 If you'd like to help improve this project, feel free to fork and submit a PR.
-
----
-
